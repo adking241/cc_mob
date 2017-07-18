@@ -22,4 +22,8 @@ def test_assert_that_2_equals_2_cents
 def test_assert_that_5_cents_equals_nickel
 	assert_equal({"nickel" => 1}, make_change(5))
 	end
+
+def test_assert_that_8_cents_equals_nickel_3_pennies
+	assert_equal({"penny" => 3,"nickel" => 1}, make_change(8))
+	end
 end
