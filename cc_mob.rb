@@ -1,11 +1,11 @@
 def make_change(amount)
-	if amount >= 5 
-		{"nickel" => amount / 5}
-		amount = amount - 5
+	exchange = {}
+	coins = {"quarter" => 25, "dime" => 10, "nickel" => 5, "penny" => 1}
+	coins.each do |coin, value|
+		if amount >= value
+			exchange[coin] = amount / value
+			amount = amount % value
+		end
 	end
-	if amount >= 1
-		{"penny" => amount}
-	else 
-		{}
-	end
+	exchange
 end
